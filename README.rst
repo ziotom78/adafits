@@ -3,7 +3,7 @@ AdaFITS User's Manual
 
 Copyright © 2013 Maurizio Tomasi.
 
-This is the repository of the AdaFITS library, a set of Ada 2005 bindings to
+This is the repository of the AdaFITS library, a set of Ada 2012 bindings to
 the CFITSIO library (http://heasarc.gsfc.nasa.gov/fitsio/). The
 library is licensed under the GPL 2 – see the file ``LICENSE`` for
 more information.

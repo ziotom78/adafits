@@ -1,5 +1,5 @@
 --------------------------------------------------------------------
---  AdaFITS: a set of Ada 2005 bindings to the CFITSIO library
+--  AdaFITS: a set of Ada 2012 bindings to the CFITSIO library
 --  Copyright (C) 2013 Maurizio Tomasi
 -- 
 --  This program is free software; you can redistribute it and/or
