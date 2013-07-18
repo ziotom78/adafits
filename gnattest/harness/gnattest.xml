@@ -1,0 +1,160 @@
+<tests_mapping mode="monolith">
+   <unit source_file="adafits-column_routines.ads">
+      <test_unit target_file="adafits-column_routines-test_data-tests.ads">
+         <setup file="adafits-column_routines-test_data.adb" line="3"  column="4"/>
+         <teardown file="adafits-column_routines-test_data.adb" line="9"  column="4"/>
+         <tested name="Read_Column_Of_Shorts" line="19" column="4">
+            <test file="adafits-column_routines-test_data-tests.adb" line="13" column="1" timestamp="2013-07-16 15:30:14"/>
+         </tested>
+         <tested name="Write_Column_Of_Shorts" line="29" column="4">
+            <test file="adafits-column_routines-test_data-tests.adb" line="34" column="1" timestamp="2013-07-16 15:30:14"/>
+         </tested>
+         <tested name="Read_Column_Of_Longs" line="48" column="4">
+            <test file="adafits-column_routines-test_data-tests.adb" line="55" column="1" timestamp="2013-07-16 15:30:14"/>
+         </tested>
+         <tested name="Write_Column_Of_Longs" line="58" column="4">
+            <test file="adafits-column_routines-test_data-tests.adb" line="76" column="1" timestamp="2013-07-16 15:30:14"/>
+         </tested>
+         <tested name="Read_Column_Of_Floats" line="78" column="4">
+            <test file="adafits-column_routines-test_data-tests.adb" line="97" column="1" timestamp="2013-07-16 15:30:14"/>
+         </tested>
+         <tested name="Write_Column_Of_Floats" line="88" column="4">
+            <test file="adafits-column_routines-test_data-tests.adb" line="118" column="1" timestamp="2013-07-16 15:30:14"/>
+         </tested>
+         <tested name="Read_Column_Of_Doubles" line="108" column="4">
+            <test file="adafits-column_routines-test_data-tests.adb" line="139" column="1" timestamp="modified"/>
+         </tested>
+         <tested name="Write_Column_Of_Doubles" line="118" column="4">
+            <test file="adafits-column_routines-test_data-tests.adb" line="172" column="1" timestamp="modified"/>
+         </tested>
+         <dangling>
+         </dangling>
+      </test_unit>
+      <test_unit target_file="adafits-column_routines-test_data-tests-short_column-test_data-tests.ads">
+         <setup file="adafits-column_routines-test_data-tests-short_column-test_data.adb" line="3"  column="4"/>
+         <teardown file="adafits-column_routines-test_data-tests-short_column-test_data.adb" line="9"  column="4"/>
+         <dangling>
+         </dangling>
+      </test_unit>
+      <test_unit target_file="adafits-column_routines-test_data-tests-long_column-test_data-tests.ads">
+         <setup file="adafits-column_routines-test_data-tests-long_column-test_data.adb" line="3"  column="4"/>
+         <teardown file="adafits-column_routines-test_data-tests-long_column-test_data.adb" line="9"  column="4"/>
+         <dangling>
+         </dangling>
+      </test_unit>
+      <test_unit target_file="adafits-column_routines-test_data-tests-float_column-test_data-tests.ads">
+         <setup file="adafits-column_routines-test_data-tests-float_column-test_data.adb" line="3"  column="4"/>
+         <teardown file="adafits-column_routines-test_data-tests-float_column-test_data.adb" line="9"  column="4"/>
+         <dangling>
+         </dangling>
+      </test_unit>
+      <test_unit target_file="adafits-column_routines-test_data-tests-double_column-test_data-tests.ads">
+         <setup file="adafits-column_routines-test_data-tests-double_column-test_data.adb" line="3"  column="4"/>
+         <teardown file="adafits-column_routines-test_data-tests-double_column-test_data.adb" line="9"  column="4"/>
+         <dangling>
+         </dangling>
+      </test_unit>
+   </unit>
+   <unit source_file="adafits.ads">
+      <test_unit target_file="adafits-test_data-tests.ads">
+         <setup file="adafits-test_data.adb" line="3"  column="4"/>
+         <teardown file="adafits-test_data.adb" line="9"  column="4"/>
+         <tested name="Get_Fits_Ptr" line="32" column="4">
+            <test file="adafits-test_data-tests.adb" line="13" column="1" timestamp="modified"/>
+         </tested>
+         <tested name="Get_CFITSIO_Version" line="57" column="4">
+            <test file="adafits-test_data-tests.adb" line="36" column="1" timestamp="modified"/>
+         </tested>
+         <tested name="Get_FITSIO_Error_String" line="60" column="4">
+            <test file="adafits-test_data-tests.adb" line="57" column="1" timestamp="modified"/>
+         </tested>
+         <tested name="Open_File" line="63" column="4">
+            <test file="adafits-test_data-tests.adb" line="80" column="1" timestamp="modified"/>
+         </tested>
+         <tested name="Open_Data" line="67" column="4">
+            <test file="adafits-test_data-tests.adb" line="115" column="1" timestamp="modified"/>
+         </tested>
+         <tested name="Open_Table" line="71" column="4">
+            <test file="adafits-test_data-tests.adb" line="142" column="1" timestamp="modified"/>
+         </tested>
+         <tested name="Open_Image" line="75" column="4">
+            <test file="adafits-test_data-tests.adb" line="168" column="1" timestamp="modified"/>
+         </tested>
+         <tested name="Create_File" line="79" column="4">
+            <test file="adafits-test_data-tests.adb" line="194" column="1" timestamp="modified"/>
+         </tested>
+         <tested name="Close_File" line="83" column="4">
+            <test file="adafits-test_data-tests.adb" line="219" column="1" timestamp="modified"/>
+         </tested>
+         <tested name="Flush_Buffers" line="86" column="4">
+            <test file="adafits-test_data-tests.adb" line="253" column="1" timestamp="modified"/>
+         </tested>
+         <tested name="Flush_File" line="89" column="4">
+            <test file="adafits-test_data-tests.adb" line="273" column="1" timestamp="modified"/>
+         </tested>
+         <tested name="Delete_File" line="92" column="4">
+            <test file="adafits-test_data-tests.adb" line="293" column="1" timestamp="modified"/>
+         </tested>
+         <tested name="Get_File_Name" line="95" column="4">
+            <test file="adafits-test_data-tests.adb" line="328" column="1" timestamp="modified"/>
+         </tested>
+         <tested name="Create_Table" line="99" column="4">
+            <test file="adafits-test_data-tests.adb" line="362" column="1" timestamp="modified"/>
+         </tested>
+         <tested name="Get_Number_Of_HDUs" line="106" column="4">
+            <test file="adafits-test_data-tests.adb" line="397" column="1" timestamp="modified"/>
+         </tested>
+         <tested name="Get_Current_HDU_Index" line="110" column="4">
+            <test file="adafits-test_data-tests.adb" line="423" column="1" timestamp="modified"/>
+         </tested>
+         <tested name="Get_Current_HDU_Type" line="114" column="4">
+            <test file="adafits-test_data-tests.adb" line="449" column="1" timestamp="modified"/>
+         </tested>
+         <tested name="Get_Number_Of_Rows_For_Optimal_IO" line="118" column="4">
+            <test file="adafits-test_data-tests.adb" line="476" column="1" timestamp="2013-07-16 15:30:14"/>
+         </tested>
+         <tested name="Get_Number_Of_Rows" line="122" column="4">
+            <test file="adafits-test_data-tests.adb" line="497" column="1" timestamp="modified"/>
+         </tested>
+         <tested name="Get_Number_Of_Columns" line="126" column="4">
+            <test file="adafits-test_data-tests.adb" line="531" column="1" timestamp="modified"/>
+         </tested>
+         <tested name="Move_To_HDU" line="130" column="4">
+            <test file="adafits-test_data-tests.adb" line="565" column="1" timestamp="modified"/>
+         </tested>
+         <tested name="Move_To_HDU" line="134" column="4">
+            <test file="adafits-test_data-tests.adb" line="594" column="1" timestamp="modified"/>
+         </tested>
+         <tested name="Get_Key_As_String" line="140" column="4">
+            <test file="adafits-test_data-tests.adb" line="627" column="1" timestamp="modified"/>
+         </tested>
+         <tested name="Get_Key_As_Long" line="145" column="4">
+            <test file="adafits-test_data-tests.adb" line="650" column="1" timestamp="modified"/>
+         </tested>
+         <tested name="Get_Key_As_Double" line="150" column="4">
+            <test file="adafits-test_data-tests.adb" line="673" column="1" timestamp="modified"/>
+         </tested>
+         <tested name="Set_Key" line="155" column="4">
+            <test file="adafits-test_data-tests.adb" line="697" column="1" timestamp="modified"/>
+         </tested>
+         <tested name="Set_Key_As_Long" line="161" column="4">
+            <test file="adafits-test_data-tests.adb" line="733" column="1" timestamp="modified"/>
+         </tested>
+         <tested name="Set_Key_As_Double" line="167" column="4">
+            <test file="adafits-test_data-tests.adb" line="762" column="1" timestamp="modified"/>
+         </tested>
+         <tested name="Write_Comment" line="174" column="4">
+            <test file="adafits-test_data-tests.adb" line="803" column="1" timestamp="modified"/>
+         </tested>
+         <tested name="Write_History" line="178" column="4">
+            <test file="adafits-test_data-tests.adb" line="823" column="1" timestamp="modified"/>
+         </tested>
+         <tested name="Write_Current_Date" line="182" column="4">
+            <test file="adafits-test_data-tests.adb" line="843" column="1" timestamp="modified"/>
+         </tested>
+         <dangling>
+            <test file="adafits-test_data-tests.adb" line="862" column="1"/>
+         </dangling>
+      </test_unit>
+   </unit>
+</tests_mapping>
