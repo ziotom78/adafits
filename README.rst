@@ -1,5 +1,5 @@
-AdaFITS User's Manual
-=====================
+AdaFITS
+=======
 
 Copyright © 2013 Maurizio Tomasi.
 
@@ -114,7 +114,7 @@ in Ada using AdaFITS:
 
     procedure Create_Table (File : Fits_File) is
 
-      package UStr renames Ada.Strings.Unbounded;
+      package UStr renames Ada.Strings.Unbounded.To_Unbounded_String;
 
       Columns : constant Column_Def_Array (1 .. 7) :=
         ((Name => UStr ("LOCX"), Format => UStr ("1D"), Unit => UStr ("[m]")),
@@ -131,9 +131,9 @@ in Ada using AdaFITS:
 
 (Note that an higher level of safety could have been achieved in C by
 defining a ``struct column_def_t`` and modifying the prototype of
-``fits_create_tbl`` accordingly. This would however not prevent the
-user from passing a wrong number of columns – e.g., 8 instead of 7 – to the
-``fits_create_tbl`` function.)
+``fits_create_tbl`` accordingly. This would however not have prevented
+the user from passing a wrong number of columns – e.g., 8 instead of 7
+– to the ``fits_create_tbl`` function.)
 
 
 Usage examples
