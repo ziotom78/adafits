@@ -29,7 +29,7 @@ project AdaFITS is
    for Library_Kind use "LIBRARY_TYPE";
    for Library_Version use "1.0.0";
    for Library_Interface use ("adafits");
-   for Source_Dirs use ("./");
+   for Source_Dirs use ("./adafits");
    type Library_Dir_Type is
       ("/usr/lib/x86_64-linux-gnu");
    Library_Dir : Library_Dir_Type := external ("Library_Dir", "/usr/lib/x86_64-linux-gnu");
