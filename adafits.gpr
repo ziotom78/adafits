@@ -35,7 +35,7 @@ project AdaFITS is
    Library_Dir : Library_Dir_Type := external ("Library_Dir", "/usr/lib/x86_64-linux-gnu");
 
    package Compiler is
-      for Default_Switches ("ada") use ("-O2", "-gnat2012", "-gnaty", "-g");
+      for Default_Switches ("ada") use ("-O2", "-gnat2005", "-gnaty", "-g");
    end Compiler;
 
    package Linker is

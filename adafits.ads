@@ -1,17 +1,17 @@
 --------------------------------------------------------------------
 --  AdaFITS: a set of Ada 2012 bindings to the CFITSIO library
 --  Copyright (C) 2013 Maurizio Tomasi
--- 
+--
 --  This program is free software; you can redistribute it and/or
 --  modify it under the terms of the GNU General Public License as
 --  published by the Free Software Foundation; either version 2 of the
 --  License, or (at your option) any later version.
--- 
+--
 --  This program is distributed in the hope that it will be useful,
 --  but WITHOUT ANY WARRANTY; without even the implied warranty of
 --  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the GNU
 --  General Public License for more details.
--- 
+--
 --  You should have received a copy of the GNU General Public License
 --  along with this program; if not, write to the Free Software
 --  Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA
@@ -97,111 +97,111 @@ package AdaFITS is
                          Overwrite : Boolean := False) return Fits_File;
 
    --  Close a FITS file that has been previously opened
-   procedure Close_File (File : in out Fits_File);
+   procedure Close_File (File : Fits_File);
 
    --  Flush any internal buffer (faster flush)
-   procedure Flush_Buffers (File : in out Fits_File);
+   procedure Flush_Buffers (File : Fits_File);
 
    --  Flush any buffer, close the file and reopen it (safer flush)
-   procedure Flush_File (File : in out Fits_File);
+   procedure Flush_File (File : Fits_File);
 
    --  Delete a FITS file that is still open
-   procedure Delete_File (File : in out Fits_File);
+   procedure Delete_File (File : Fits_File);
 
    --  Return the name of the file associated with the FITS object
-   function Get_File_Name (File : in out Fits_File)
+   function Get_File_Name (File : Fits_File)
                            return String;
 
    --  Create the header of an ASCII/binary table in the current HDU
-   procedure Create_Table (File : in out Fits_File;
+   procedure Create_Table (File : Fits_File;
                            Extension_Name : String;
                            Columns : Column_Def_Array;
                            Type_Of_Table : Table_Type := BINARY_TABLE;
                            Num_Of_Elements : Natural := 0);
 
    --  Return the number of HDUs currently present in the FITS file
-   function Get_Number_Of_HDUs (File : in out Fits_File)
+   function Get_Number_Of_HDUs (File : Fits_File)
                                 return Natural;
 
    --  Return the number of HDUs currently present in the FITS file
-   function Get_Current_HDU_Index (File : in out Fits_File)
+   function Get_Current_HDU_Index (File : Fits_File)
                                    return Positive;
 
    --  Return the type of the current HDU
-   function Get_Current_HDU_Type (File : in out Fits_File)
+   function Get_Current_HDU_Type (File : Fits_File)
                                   return HDU_Type;
 
    --  Return the best number of rows to read/write at one time
-   function Get_Number_Of_Rows_For_Optimal_IO (File : in out Fits_File)
+   function Get_Number_Of_Rows_For_Optimal_IO (File : Fits_File)
                                                return Positive;
 
    --  Return the number of rows in the current HDU
-   function Get_Number_Of_Rows (File : in out Fits_File)
+   function Get_Number_Of_Rows (File : Fits_File)
                                 return Natural;
 
    --  Return the number of columns in the current HDU
-   function Get_Number_Of_Columns (File : in out Fits_File)
+   function Get_Number_Of_Columns (File : Fits_File)
                                    return Natural;
 
    --  Move to the specified HDU (the index is 1-based)
-   procedure Move_To_HDU (File : in out Fits_File;
+   procedure Move_To_HDU (File : Fits_File;
                           Number : Positive);
 
    --  Move to the HDU with the given name (EXTNAME)
-   procedure Move_To_HDU (File : in out Fits_File;
+   procedure Move_To_HDU (File : Fits_File;
                           Name : String;
                           Required_Type : HDU_Type := ANY;
                           Required_Version : Natural := 0);
 
    --  Return the value of a key in the current HDU as a string
-   function Get_Key_As_String (File : in out Fits_File;
+   function Get_Key_As_String (File : Fits_File;
                                Key : String)
                                return String;
 
    --  Return the value of a key in the current HDU converted to an integer
-   function Get_Key_As_Long (File : in out Fits_File;
+   function Get_Key_As_Long (File : Fits_File;
                              Key : String)
                              return Interfaces.C.long;
 
    --  Return the value of a key in the current HDU converted to a double
-   function Get_Key_As_Double (File : in out Fits_File;
+   function Get_Key_As_Double (File : Fits_File;
                                Key : String)
                                return Interfaces.C.double;
 
    --  Set (update) the value of a key in the current HDU
-   procedure Set_Key (File : in out Fits_File;
+   procedure Set_Key (File : Fits_File;
                       Key : String;
                       Value : String;
                       Comment : String := "");
 
    --  Set (update) the value of a key in the current HDU
-   procedure Set_Key_As_Long (File : in out Fits_File;
+   procedure Set_Key_As_Long (File : Fits_File;
                               Key : String;
                               Value : Interfaces.C.long;
                               Comment : String := "");
 
    --  Set (update) the value of a key in the current HDU
-   procedure Set_Key_As_Double (File : in out Fits_File;
+   procedure Set_Key_As_Double (File : Fits_File;
                                 Key : String;
                                 Value : Interfaces.C.double;
                                 Decimals : Interfaces.C.int;
                                 Comment : String := "");
 
    --  Append a COMMENT field to the end of the current HDU
-   procedure Write_Comment (File : in out Fits_File;
+   procedure Write_Comment (File : Fits_File;
                             Comment : String);
 
    --  Append a HISTORY field to the end of the current HDU
-   procedure Write_History (File : in out Fits_File;
+   procedure Write_History (File : Fits_File;
                             History : String);
 
    --  Append the current date and time to the current HDU
-   procedure Write_Current_Date (File : in out Fits_File);
+   procedure Write_Current_Date (File : Fits_File);
 
 private
 
    type Fits_File is record
-      Ptr : System.Address := System.Null_Address;
+      Ptr : aliased System.Address := System.Null_Address;
    end record;
 
    FLEN_FILENAME : constant := 1025; --  Max length of a filename

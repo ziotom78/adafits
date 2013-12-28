@@ -1,17 +1,17 @@
 --------------------------------------------------------------------
 --  AdaFITS: a set of Ada 2012 bindings to the CFITSIO library
 --  Copyright (C) 2013 Maurizio Tomasi
--- 
+--
 --  This program is free software; you can redistribute it and/or
 --  modify it under the terms of the GNU General Public License as
 --  published by the Free Software Foundation; either version 2 of the
 --  License, or (at your option) any later version.
--- 
+--
 --  This program is distributed in the hope that it will be useful,
 --  but WITHOUT ANY WARRANTY; without even the implied warranty of
 --  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the GNU
 --  General Public License for more details.
--- 
+--
 --  You should have received a copy of the GNU General Public License
 --  along with this program; if not, write to the Free Software
 --  Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA
@@ -48,14 +48,15 @@ package body AdaFITS.Generic_Column_Routines is
          Num_Of_Elements : C_Ext.long_long;
          Null_Value : Pointer;
          Vector : Pointer;
-         Any_null : out C.int;
-         Status : in out C.int)
+         Any_null : access C.int;
+         Status : access C.int)
          return C.int;
       pragma Import (C, Fits_Read_Col, "ffgcv");
 
       Aliased_Null : aliased Element := Null_Value;
-      Any_Null_Flag : C.int;
-      Status : C.int := 0;
+      Any_Null_Flag : aliased C.int;
+      Status : aliased C.int := 0;
+      Dest : Pointer := Destination (Destination'First)'Unchecked_Access;
 
    begin
       if Fits_Read_Col (File.Ptr,
@@ -65,9 +66,9 @@ package body AdaFITS.Generic_Column_Routines is
                         First_Elem => C_Ext.long_long (First_Element),
                         Num_Of_Elements => C_Ext.long_long (Num_Of_Elements),
                         Null_Value => Aliased_Null'Unchecked_Access,
-                        Vector => Destination (Destination'First)'Unchecked_Access,
-                        Any_null => Any_Null_Flag,
-                        Status => Status) > 0 then
+                        Vector => Dest,
+                        Any_null => Any_Null_Flag'Access,
+                        Status => Status'Access) > 0 then
          raise AdaFITS_Error with AdaFITS.Get_FITSIO_Error_String;
       end if;
    end Read_Column;
@@ -87,11 +88,11 @@ package body AdaFITS.Generic_Column_Routines is
          First_Elem : C_Ext.long_long;
          Num_Of_Elements : C_Ext.long_long;
          Vector : Const_Pointer;
-         Status : in out C.int)
+         Status : access C.int)
          return C.int;
       pragma Import (C, Fits_Write_Col, "ffpcl");
 
-      Status : C.int := 0;
+      Status : aliased C.int := 0;
 
    begin
       if Fits_Write_Col (File.Ptr,
@@ -101,7 +102,7 @@ package body AdaFITS.Generic_Column_Routines is
                          First_Elem => C_Ext.long_long (First_Element),
                          Num_Of_Elements => C_Ext.long_long (Elements'Length),
                          Vector => Elements (Elements'First)'Unchecked_Access,
-                         Status => Status) > 0 then
+                         Status => Status'Access) > 0 then
          raise AdaFITS_Error with Get_FITSIO_Error_String;
       end if;
    end Write_Column;

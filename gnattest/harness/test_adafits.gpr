@@ -8,7 +8,7 @@ project test_adafits is
 
    package Compiler is
       for Default_Switches ("ada") use
-        ("-g", "-O1", "-gnatyM0", "-gnata", "-gnat2012");
+        ("-g", "-O1", "-gnatyM0", "-gnata", "-gnat2005");
    end Compiler;
 
 end test_adafits;
