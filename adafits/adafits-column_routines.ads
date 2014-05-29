@@ -1,17 +1,17 @@
 --------------------------------------------------------------------
 --  AdaFITS: a set of Ada 2012 bindings to the CFITSIO library
 --  Copyright (C) 2013 Maurizio Tomasi
--- 
+--
 --  This program is free software; you can redistribute it and/or
 --  modify it under the terms of the GNU General Public License as
 --  published by the Free Software Foundation; either version 2 of the
 --  License, or (at your option) any later version.
--- 
+--
 --  This program is distributed in the hope that it will be useful,
 --  but WITHOUT ANY WARRANTY; without even the implied warranty of
 --  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the GNU
 --  General Public License for more details.
--- 
+--
 --  You should have received a copy of the GNU General Public License
 --  along with this program; if not, write to the Free Software
 --  Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA
@@ -32,7 +32,7 @@ package AdaFITS.Column_Routines is
    pragma Convention (C, Short_Array);
 
    package Short_Column is new AdaFITS.Generic_Column_Routines
-     (Element => Interfaces.C.Short,
+     (Element => Interfaces.C.short,
       Element_Array => Short_Array,
       CFITSIO_Data_Type => AdaFITS.CFITSIO_TYPE_SHORT);
 
@@ -61,7 +61,7 @@ package AdaFITS.Column_Routines is
    pragma Convention (C, Long_Array);
 
    package Long_Column is new AdaFITS.Generic_Column_Routines
-     (Element => Interfaces.C.Long,
+     (Element => Interfaces.C.long,
       Element_Array => Long_Array,
       CFITSIO_Data_Type => AdaFITS.CFITSIO_TYPE_LONG);
 
