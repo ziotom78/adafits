@@ -8,6 +8,8 @@ the CFITSIO library (http://heasarc.gsfc.nasa.gov/fitsio/). The
 library is licensed under the GPL 2 – see the file ``LICENSE`` for
 more information.
 
+**Warning**: This repository is currently archived.
+
 Project status
 --------------
 
